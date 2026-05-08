@@ -1,3 +1,57 @@
+/* Styling Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(10, 10, 10, 0.95); /* Hitam transparan */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    z-index: 2000;
+}
+
+.nav-logo {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--cream);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* Responsive Navbar (HP) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Sembunyikan menu di HP, bisa dikembangkan dengan JS nanti */
+    }
+    .navbar {
+        padding: 15px 20px;
+    }
+}
+
 .hero {
     position: relative;
     height: 100vh;
