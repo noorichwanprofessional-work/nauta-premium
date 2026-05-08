@@ -3,89 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nauta Premium</title>
+    <title>Nauta Premium | Home</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --hitam: #1a1a1a;
-            --gold: #d4af37;
-            --pink: #ffb6c1;
-            --cream: #fffdd0;
+            --bg: #121212;          /* Hitam Matte */
+            --card-bg: #1a1a1a;     /* Hitam Card */
+            --accent: #d4af37;      /* Gold */
+            --text-main: #fffdd0;   /* Cream */
+            --text-sub: #ffb6c1;    /* Pink */
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--hitam);
-            color: var(--cream);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            text-align: center;
+            overflow: hidden;
         }
 
-        .card {
-            background: linear-gradient(145deg, #222, #111);
-            padding: 40px;
-            border-radius: 20px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 400px;
+        /* Background Animasi Halus mirip Kulla */
+        .bg-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--accent);
+            filter: blur(150px);
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: -1;
+            animation: move 10s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-50%, -50%); }
+            to { transform: translate(50%, 50%); }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 500px;
             width: 90%;
+            padding: 40px;
+            border-radius: 30px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.5s ease;
+        }
+
+        .container:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, var(--accent), var(--text-sub));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--bg);
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         h1 {
-            color: var(--gold);
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 8px;
+            color: var(--accent);
+            letter-spacing: 1px;
         }
 
-        p {
-            color: var(--pink);
-            font-size: 1.1rem;
+        .subtitle {
+            color: var(--text-sub);
+            font-weight: 300;
             margin-bottom: 30px;
-        }
-
-        .btn {
-            display: block;
-            background-color: var(--gold);
-            color: var(--hitam);
-            text-decoration: none;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background-color: var(--pink);
-            transform: scale(1.05);
-        }
-
-        .footer {
-            margin-top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             font-size: 0.8rem;
-            color: var(--cream);
-            opacity: 0.6;
+        }
+
+        .links {
+            display: grid;
+            gap: 15px;
+        }
+
+        .link-item {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 400;
+            border: 1px solid transparent;
+            transition: 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .link-item:hover {
+            background: transparent;
+            border-color: var(--accent);
+            color: var(--accent);
+            padding-left: 25px;
+        }
+
+        .link-item span {
+            font-size: 1.2rem;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.7rem;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        /* JavaScript Interaction Style */
+        .click-effect {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s linear;
+            z-index: 999;
+        }
+
+        @keyframes ripple {
+            from { width: 0; height: 0; opacity: 0.5; }
+            to { width: 100px; height: 100px; opacity: 0; }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <div class="profile-img">NP</div>
         <h1>Nauta Premium</h1>
-        <p>Eksklusivitas dalam Setiap Sentuhan</p>
-        
-        <a href="#" class="btn">Katalog Produk</a>
-        <a href="#" class="btn">Hubungi WhatsApp</a>
-        
-        <div class="footer">
-            &copy; 2026 Nauta Premium. All Rights Reserved.
+        <div class="subtitle">Luxury & Collection</div>
+
+        <div class="links">
+            <a href="#" class="link-item">
+                Produk Unggulan <span>&rarr;</span>
+            </a>
+            <a href="#" class="link-item">
+                Hubungi via WhatsApp <span>&rarr;</span>
+            </a>
+            <a href="#" class="link-item">
+                Lokasi Galeri <span>&rarr;</span>
+            </a>
         </div>
+
+        <footer>
+            EST. 2026 • BANJARBARU
+        </footer>
     </div>
 
+    <script>
+        // Efek Klik Mouse agar interaktif seperti web modern
+        document.addEventListener('click', (e) => {
+            const circle = document.createElement('div');
+            circle.className = 'click-effect';
+            circle.style.left = `${e.pageX}px`;
+            circle.style.top = `${e.pageY}px`;
+            document.body.appendChild(circle);
+
+            setTimeout(() => {
+                circle.remove();
+            }, 600);
+        });
+
+        // Efek Muncul (Fade In) saat load
+        window.addEventListener('load', () => {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            setTimeout(() => {
+                container.style.transition = 'opacity 1s ease';
+                container.style.opacity = '1';
+            }, 100);
+        });
+    </script>
 </body>
 </html>
