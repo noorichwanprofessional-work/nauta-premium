@@ -51,4 +51,33 @@ document.addEventListener('click', (e) => {
     }, 10);
     
     setTimeout(() => { dot.remove(); }, 500);
+    // 4. Slider Logic
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlides(index) {
+    // Reset semua slide dan dot
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    // Aktifkan slide yang dipilih
+    currentSlideIndex = index;
+    if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
+    if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+
+    slides[currentSlideIndex].classList.add('active');
+    dots[currentSlideIndex].classList.add('active');
+}
+
+// Fungsi untuk klik dot
+function currentSlide(index) {
+    showSlides(index);
+}
+
+// Otomatis pindah slide setiap 5 detik
+setInterval(() => {
+    currentSlideIndex++;
+    showSlides(currentSlideIndex);
+}, 5000);
 });
