@@ -15,45 +15,45 @@
 
     <div id="progress"></div>
 
-    <!-- Section 1: Beranda -->
-    <section class="hero">
-        <div class="reveal">
-            <p class="overline">Welcome to</p>
-            <h1>Nauta Premium</h1>
-            <p class="tagline">The Art of Quality</p>
+   <!-- Section 1: Beranda dengan Slider -->
+<section class="hero">
+    <div class="slider">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="reveal">
+                <p class="overline">Welcome to</p>
+                <h1>Nauta Premium</h1>
+                <p class="tagline">The Art of Quality</p>
+            </div>
         </div>
-        <a href="#about" class="scroll-indicator">↓</a>
-    </section>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="reveal">
+                <p class="overline">New Collection</p>
+                <h1>Modern Luxury</h1>
+                <p class="tagline">Eksklusivitas Tanpa Batas</p>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="reveal">
+                <p class="overline">Our Service</p>
+                <h1>Trusted Quality</h1>
+                <p class="tagline">Kepuasan Anda Prioritas Kami</p>
+            </div>
+        </div>
+    </div>
 
-    <!-- Section 2: Tentang Kami -->
-    <section id="about" class="about">
-        <div class="reveal">
-            <h2>Luxury Experience</h2>
-            <p>Kami menghadirkan koleksi eksklusif yang memadukan keindahan warna gold yang mewah dengan sentuhan pink yang elegan untuk Anda.</p>
-        </div>
-    </section>
+    <!-- Tombol Navigasi Slider -->
+    <div class="slider-dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
 
-    <!-- Section 3: Layanan/Produk -->
-    <section id="services">
-        <div class="reveal">
-            <h2>Our Collection</h2>
-        </div>
-        <div class="grid-container reveal">
-            <a href="#" class="box">
-                <h3>Katalog Gold</h3>
-                <p>Lihat koleksi emas eksklusif kami.</p>
-            </a>
-            <a href="#" class="box">
-                <h3>Katalog Pink</h3>
-                <p>Edisi terbatas dengan sentuhan lembut.</p>
-            </a>
-            <a href="#" class="box">
-                <h3>Pesan Sekarang</h3>
-                <p>Konsultasi langsung via WhatsApp.</p>
-            </a>
-        </div>
-    </section>
-
+    <a href="#about" class="scroll-indicator">↓</a>
+</section>
+    
     <footer>
         &copy; 2026 NAUTA PREMIUM • Banjarbaru, Indonesia
     </footer>
