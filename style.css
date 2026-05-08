@@ -1,0 +1,148 @@
+:root {
+    --bg: #0a0a0a;
+    --card: #141414;
+    --gold: #d4af37;
+    --pink: #ffb6c1;
+    --cream: #fffdd0;
+    --text-dim: rgba(255, 253, 208, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--pink));
+    z-index: 1000;
+    width: 0%;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Typography */
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.overline {
+    color: var(--pink);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.tagline {
+    color: var(--cream);
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    animation: bounce 2s infinite;
+    color: var(--gold);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.about {
+    background-color: var(--card);
+}
+
+.about h2, #services h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 600px;
+    color: var(--text-dim);
+    margin: 0 auto;
+}
+
+/* Grid System */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 40px;
+}
+
+.box {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.box:hover {
+    border-color: var(--pink);
+    transform: scale(1.02);
+    background: #222;
+}
+
+.box h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+footer {
+    padding: 50px 20px;
+    font-size: 0.8rem;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: var(--text-dim);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .grid-container { grid-template-columns: 1fr; }
+}
